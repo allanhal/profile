@@ -4,6 +4,7 @@ html {
   padding: 0;
   font-family: "Rubik";
   background-color: rgb(55, 86, 116);
+  color: gray;
 }
 * {
   box-sizing: border-box;
@@ -14,7 +15,7 @@ a {
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 100px;
   align-items: center;
   height: 100vh;
 }
@@ -39,6 +40,10 @@ a {
   width: 100%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  cursor: pointer;
+}
+.image-transition {
+  transition: all 0.3s ease-in-out;
 }
 .mid {
   margin-top: -45px;
@@ -66,7 +71,8 @@ a {
   text-align: right;
 }
 .icon {
-  width: 20px;
+  width: 30px;
+  border-radius: 10px;
 }
 .footer {
   font-weight: 600;
@@ -82,7 +88,7 @@ a {
 }
 #iconSync {
   width: 50px;
-  /* animation: spin 4s linear infinite; */
+  cursor: pointer;
 }
 @-moz-keyframes spin {
   100% {

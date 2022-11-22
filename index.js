@@ -37,12 +37,19 @@ function changeColors(colorsArray) {
   document.body.style.backgroundColor = stringRgb(colorsArray[0]);
 
   for (const card of document.getElementsByClassName("card")) {
-    card.style.boxShadow = `4px 1px 19px 4px ${stringRgb(colorsArray[1])}`;
+    card.style.boxShadow = `4px 1px 19px 4px ${stringRgb(colorsArray[2])}`;
   }
   for (const top of document.getElementsByClassName("top")) {
-    top.style.backgroundColor = stringRgb(colorsArray[2]);
+    top.style.backgroundColor = stringRgb(colorsArray[3]);
   }
   for (const divider of document.getElementsByClassName("divider")) {
-    divider.style.backgroundColor = stringRgb(colorsArray[2]);
+    divider.style.backgroundColor = stringRgb(colorsArray[3]);
   }
+}
+
+function changeImage() {
+  image.src =
+    image.src.indexOf("profile") >= 0
+      ? "images/allan.jpg"
+      : "images/profile.jpg";
 }
