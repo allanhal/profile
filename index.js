@@ -1,5 +1,6 @@
-var url = "http://colormind.io/api/";
-var data = {
+const urlColormind = "http://colormind.io/api/";
+const urlVercel = "https://colormind-https.vercel.app/";
+const data = {
   model: "default",
 };
 
@@ -8,12 +9,23 @@ const exec = async () => {
   setTimeout(() => {
     iconSync.style.animation = "";
   }, 1000);
-  const response = await fetch(url, {
-    method: "POST",
-    body: JSON.stringify(data),
-  });
-  const resultJson = await response.json();
-  changeColors(resultJson.result);
+
+  let resultJson;
+  try {
+    const response = await fetch(urlColormind, {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+    resultJson = await response.json();
+  } catch (error) {
+    try {
+      const response = await fetch(urlVercel);
+      resultJson = await response.json();
+    } catch (error) {}
+  }
+  if (resultJson) {
+    changeColors(resultJson.result);
+  }
 };
 
 function stringRgb(color) {
