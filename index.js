@@ -12,17 +12,18 @@ const exec = async () => {
 
   let resultJson;
   try {
-    const response = await fetch(urlColormind, {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
+    const response = await fetch(urlVercel);
     resultJson = await response.json();
   } catch (error) {
     try {
-      const response = await fetch(urlVercel);
+      const response = await fetch(urlColormind, {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
       resultJson = await response.json();
     } catch (error) {}
   }
+
   if (resultJson) {
     changeColors(resultJson.result);
   }
