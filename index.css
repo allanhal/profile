@@ -3,8 +3,7 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Rubik";
-  box-sizing: border-box;
-  background-color: rgb(222, 245, 229);
+  background-color: rgb(55, 86, 116);
 }
 * {
   box-sizing: border-box;
@@ -14,20 +13,20 @@ a {
 }
 .main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  box-sizing: border-box;
 }
 .card {
   border-radius: 15px;
-  box-shadow: rgb(188, 234, 213) 4px 1px 19px 4px;
+  box-shadow: rgb(45, 162, 170) 4px 1px 19px 4px;
   max-width: 200px;
   min-height: 300px;
   background-color: white;
 }
 .top {
-  background-color: rgb(158, 213, 197);
+  background-color: rgb(191, 242, 31);
   padding: 12px;
   clip-path: polygon(0 0, 0 90%, 100% 75%, 100% 0);
   width: fit-content;
@@ -41,8 +40,7 @@ a {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-
-.bottom {
+.mid {
   margin-top: -45px;
   padding: 10px 12px 12px 12px;
   display: flex;
@@ -56,9 +54,9 @@ a {
 .divider {
   margin-top: 5px;
   margin-bottom: 5px;
-  width: 40px;
-  height: 3px;
-  background-color: rgb(142, 195, 176);
+  width: 50px;
+  height: 2px;
+  background-color: rgb(191, 242, 31);
 }
 .subtitle {
   font-size: 0.8rem;
@@ -74,4 +72,31 @@ a {
   font-weight: 600;
   font-size: 0.7rem;
   text-align: right;
+}
+.sync {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 20px 0;
+}
+#iconSync {
+  width: 50px;
+  /* animation: spin 4s linear infinite; */
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
