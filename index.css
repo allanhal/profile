@@ -19,11 +19,58 @@ a {
   align-items: center;
   height: 100vh;
 }
+.portfolio {
+  margin-top: 24px;
+  width: 100%;
+  max-width: 640px;
+  padding: 0 16px 40px 16px;
+}
+.portfolio h2 {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 16px 0 12px 0;
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0 2px 8px;
+}
+.project-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.12) 0 6px 16px;
+}
+.project-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.project-info {
+  display: flex;
+  flex-direction: column;
+}
+.project-title {
+  color: #222;
+  font-size: 0.95rem;
+}
+.project-subtitle {
+  color: #666;
+  font-size: 0.8rem;
+}
 .card {
   border-radius: 15px;
   box-shadow: rgb(45, 162, 170) 4px 1px 19px 4px;
   max-width: 200px;
-  min-height: 300px;
+  min-height: 420px;
   background-color: white;
 }
 .top {
