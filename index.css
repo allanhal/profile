@@ -2,7 +2,13 @@ body,
 html {
   margin: 0;
   padding: 0;
-  font-family: "Rubik";
+  /* font-family: "Rubik"; */
+
+  font-family: "Alan Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
   background-color: rgb(55, 86, 116);
   color: gray;
 }
@@ -92,8 +98,8 @@ a {
 .card {
   border-radius: 15px;
   box-shadow: rgb(45, 162, 170) 4px 1px 19px 4px;
-  max-width: 200px;
-  min-height: 420px;
+  max-width: 220px;
+  min-height: 450px;
   background-color: white;
 }
 .top {
