@@ -10,7 +10,11 @@ html {
   font-style: normal;
 
   background-color: rgb(55, 86, 116);
+
+  background: rgb(55, 86, 116);
+  /* background-image: linear-gradient(black, green); */
   color: gray;
+  overscroll-behavior: contain;
 }
 * {
   box-sizing: border-box;
@@ -23,7 +27,8 @@ a {
   flex-direction: column;
   padding-top: 100px;
   align-items: center;
-  height: 100vh;
+  height: 100%;
+  background-color: rgb(55, 86, 116);
 }
 .portfolio {
   margin-top: 24px;
@@ -88,7 +93,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 5px;
   margin-top: 10px;
 }
 .project-title {
@@ -151,7 +155,7 @@ a {
 }
 .card {
   border-radius: 15px;
-  box-shadow: rgb(45, 162, 170) 4px 1px 19px 4px;
+  /* box-shadow: rgb(45, 162, 170) 4px 1px 19px 4px; */
   max-width: 220px;
   min-height: 450px;
   background-color: white;
