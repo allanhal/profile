@@ -1,95 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Allan Pinheiro - Senior Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png" />
+    <link rel="manifest" href="images/favicon_io/site.webmanifest" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Allan Pinheiro - Senior Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap" rel="stylesheet">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png" />
-  <link rel="manifest" href="images/favicon_io/site.webmanifest" />
-  <link rel="stylesheet" href="index.css" />
-</head>
-
-<body>
-  <div>
-    <div class="main">
-      <div class="card">
-        <div class="top">
-          <img id="image" class="image" src="images/allan.jpg" alt="my picture" onclick="changeImage()" />
+  <body>
+    <div>
+      <div class="main">
+        <div class="card">
+          <div class="top">
+            <img id="image" class="image" src="images/allan.jpg" alt="my picture" onclick="changeImage()" />
+          </div>
+          <div class="mid">
+            <span class="icons">
+              <a href="https://github.com/allanhal" target="_blank">
+                <img class="icon" src="images/github_icon.png" alt="github" />
+              </a>
+              <a href="https://www.linkedin.com/in/allanaraujopinheiro/" target="_blank">
+                <img class="icon" src="images/linkedin_icon.png" alt="linkedin" />
+              </a>
+            </span>
+            <span class="name">Allan Pinheiro</span>
+            <span class="divider"></span>
+            <span class="subtitle">Javascript/Node/React Senior Developer</span>
+            <span class="divider"></span>
+            <span class="footer">Developing software for over 10yr</span>
+            <span class="divider"></span>
+            <span class="subtitle">allan.hal@gmail.com</span>
+          </div>
+          <div class="bottom">
+            <div class="sync">
+              <img id="iconSync" src="images/sync_icon.png" alt="refresh color" onclick="exec()" />
+            </div>
+          </div>
         </div>
-        <div class="mid">
-          <span class="icons">
-            <a href="https://github.com/allanhal" target="_blank">
-              <img class="icon" src="images/github_icon.png" alt="github" />
-            </a>
-            <a href="https://www.linkedin.com/in/allanaraujopinheiro/" target="_blank">
-              <img class="icon" src="images/linkedin_icon.png" alt="linkedin" />
-            </a>
-          </span>
-          <span class="name">Allan Pinheiro</span>
-          <span class="divider"></span>
-          <span class="subtitle">Javascript/Node/React Senior Developer</span>
-          <span class="divider"></span>
-          <span class="footer">Developing software for over 10yr</span>
-          <span class="divider"></span>
-          <span class="subtitle">allan.hal@gmail.com</span>
-        </div>
-        <div class="bottom">
-          <div class="sync">
-            <img id="iconSync" src="images/sync_icon.png" alt="refresh color" onclick="exec()" />
+        <div class="portfolio">
+          <h2>Portfolio</h2>
+          <div class="portfolio-grid">
+            <div class="project-card">
+              <a href="https://www.estantepinusfortaleza.com.br/" target="_blank">
+                <img class="project-thumb" src="images/favico2.png" alt="Estante Pinus Fortaleza" />
+                <img class="project-preview" src="images/preview/estante-pinus-fortaleza.png" alt="Estante Pinus Fortaleza Preview" />
+                <div class="project-info">
+                  <span class="project-title">Estante Pinus Fortaleza</span>
+                  <span class="project-subtitle">Projeto para venda de estantes de madeira</span>
+                  <ul class="project-tech">
+                    <li>Threejs</li>
+                    <li>React</li>
+                    <li>Lucide Icons</li>
+                  </ul>
+                </div>
+              </a>
+              <div class="project-links">
+                <a class="github-link" href="https://github.com/allanhal/estante-pinus" target="_blank">Repository</a>
+                <a class="preview-link" href="https://www.estantepinusfortaleza.com.br/" target="_blank">Live</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <a href="https://epa-household-calculator.vercel.app/" target="_blank">
+                <img class="project-thumb" src="images/hcfc-512-512.png" alt="HCFC" />
+                <img class="project-preview" src="images/preview/hcfc.png" alt="HCFC Preview" />
+                <div class="project-info">
+                  <span class="project-title">HCFC - Household Carbon Footprint Calculator</span>
+                  <span class="project-subtitle">Fullstack project with React and Node to calculate the a Household footprint</span>
+                  <ul class="project-tech">
+                    <li>React</li>
+                    <li>Material UI</li>
+                    <li>TypeScript</li>
+                    <li>Node.js</li>
+                    <li>Express</li>
+                    <li>Prisma</li>
+                    <li>PostgreSQL</li>
+                    <li>Jest</li>
+                  </ul>
+                </div>
+              </a>
+              <div class="project-links">
+                <a class="github-link" href="https://github.com/allanhal/epa-household-calculator" target="_blank">Repository</a>
+                <a class="preview-link" href="https://epa-household-calculator.vercel.app/" target="_blank">Live</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <a href="https://termooo-libras.vercel.app/" target="_blank">
+                <img class="project-thumb" src="images/libras.png" alt="Termo Libras" />
+                <img class="project-preview" src="images/preview/termo-libras.png" alt="Termo Libras Preview" />
+                <div class="project-info">
+                  <span class="project-title">Termo Libras</span>
+                  <span class="project-subtitle">The idea is to help people learn the brazilian sign language using the wordle game</span>
+                  <ul class="project-tech">
+                    <li>React</li>
+                    <li>Express</li>
+                  </ul>
+                </div>
+              </a>
+              <div class="project-links">
+                <a class="github-link" href="https://github.com/allanhal/termooo-libras" target="_blank">Repository</a>
+                <a class="preview-link" href="https://termooo-libras.vercel.app/" target="_blank">Live</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <a href="https://life-counter-calendar.vercel.app" target="_blank">
+                <img class="project-thumb" src="images/image.png" alt="Life Counter Calendar" />
+                <img class="project-preview" src="images/preview/life-calendar.png" alt="Life Counter Calendar Preview" />
+                <div class="project-info">
+                  <span class="project-title">Life Counter Calendar</span>
+                  <span class="project-subtitle">Life Counter Calendar is a graphical representation of a life by weeks</span>
+                  <ul class="project-tech">
+                    <li>React</li>
+                    <li>Zustand</li>
+                    <li>Date-fns</li>
+                  </ul>
+                </div>
+              </a>
+              <div class="project-links">
+                <a class="github-link" href="https://github.com/allanhal/life-counter" target="_blank">Repository</a>
+                <a class="preview-link" href="https://life-counter-calendar.vercel.app" target="_blank">Live</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <a href="https://node-video-streaming.onrender.com" target="_blank">
+                <img class="project-thumb" src="images/node-video-streaming.png" alt="Node Video Streaming" />
+                <img class="project-preview" src="images/preview/node-video-streaming-preview.png" alt="Node Video Streaming Preview" />
+                <div class="project-info">
+                  <span class="project-title">Node Video Streaming</span>
+                  <span class="project-subtitle">Fullstack video streaming app built with Node.js</span>
+                  <ul class="project-tech">
+                    <li>Node.js</li>
+                    <li>JavaScript</li>
+                    <li>HTML</li>
+                  </ul>
+                </div>
+              </a>
+              <div class="project-links">
+                <a class="github-link" href="https://github.com/allanhal/node-video-streaming" target="_blank">Repository</a>
+                <a class="preview-link" href="https://node-video-streaming.onrender.com" target="_blank">Live</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="portfolio">
-        <h2>Portfolio</h2>
-        <div class="portfolio-grid">
-          <a class="project-card" href="https://www.estantepinusfortaleza.com.br/" target="_blank">
-            <img class="project-thumb" src="images/favico2.png" alt="Estante Pinus Fortaleza" />
-            <img class="project-preview" src="images/preview/estante-pinus-fortaleza.png"
-              alt="Estante Pinus Fortaleza Preview" />
-            <div class="project-info">
-              <span class="project-title">Estante Pinus Fortaleza</span>
-              <span class="project-subtitle">Projeto para venda de estantes de madeira</span>
-            </div>
-          </a>
-          <a class="project-card" href="https://epa-household-calculator.vercel.app/" target="_blank">
-            <img class="project-thumb" src="images/hcfc-512-512.png" alt="HCFC" />
-            <img class="project-preview" src="images/preview/hcfc.png" alt="HCFC Preview" />
-            <div class="project-info">
-              <span class="project-title">HCFC - Household Carbon Footprint Calculator</span>
-              <span class="project-subtitle">Fullstack project with React and Node to calculate the a Household
-                footprint</span>
-            </div>
-          </a>
-          <a class="project-card" href="https://termooo-libras.vercel.app/" target="_blank">
-            <img class="project-thumb" src="images/libras.png" alt="Termo Libras" />
-            <img class="project-preview" src="images/preview/termo-libras.png" alt="Termo Libras Preview" />
-            <div class="project-info">
-              <span class="project-title">Termo Libras</span>
-              <span class="project-subtitle">The idea is to help people learn the brazilian sign language using the
-                wordle game</span>
-            </div>
-          </a>
-          <a class="project-card" href="https://life-counter-calendar.vercel.app" target="_blank">
-            <img class="project-thumb" src="images/image.png" alt="Life Counter Calendar" />
-            <img class="project-preview" src="images/preview/life-calendar.png" alt="Life Counter Calendar Preview" />
-            <div class="project-info">
-              <span class="project-title">Life Counter Calendar</span>
-              <span class="project-subtitle">Life Counter Calendar is a graphical representation of a life by
-                weeks</span>
-            </div>
-          </a>
-        </div>
-      </div>
     </div>
-  </div>
-  <script src="index.js"></script>
-</body>
-
+    <script src="index.js"></script>
+  </body>
 </html>

@@ -45,11 +45,11 @@ function changeColors(colorsArray) {
   for (const divider of document.getElementsByClassName("divider")) {
     divider.style.backgroundColor = stringRgb(colorsArray[3]);
   }
+  for (const link of document.getElementsByClassName("preview-link")) {
+    link.style.backgroundColor = stringRgb(colorsArray[0]);
+  }
 }
 
 function changeImage() {
-  image.src =
-    image.src.indexOf("profile") >= 0
-      ? "images/allan.jpg"
-      : "images/profile.jpg";
+  image.src = image.src.indexOf("profile") >= 0 ? "images/allan.jpg" : "images/profile.jpg";
 }
