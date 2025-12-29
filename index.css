@@ -53,9 +53,11 @@ a {
   box-shadow: rgba(0, 0, 0, 0.08) 0 2px 8px;
   position: relative;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .project-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.12) 0 6px 16px;
+  transform: translateY(-4px);
+  box-shadow: rgba(45, 162, 170, 0.3) 0 8px 24px;
 }
 .project-card:hover .project-preview {
   opacity: 1;
@@ -94,6 +96,56 @@ a {
 .project-subtitle {
   color: #666;
   font-size: 0.8rem;
+}
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 8px 0 0 0;
+  padding: 0;
+}
+.project-tech li {
+  background: rgba(55, 86, 116, 0.1);
+  color: rgb(55, 86, 116);
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.project-links {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0 2px 0;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+.preview-link,
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 6px;
+  background: #f5f5f5;
+  color: #444;
+  border: 1px solid #e0e0e0;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.preview-link {
+  color: white;
+  background-color: rgb(55, 86, 116);
+  border: none;
+}
+.preview-link:hover,
+.github-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 .card {
   border-radius: 15px;
