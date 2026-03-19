@@ -1,128 +1,168 @@
-// ===== Color Theory Palette Generator =====
+// ===== Matrix Rain Background =====
+function initMatrix(canvas) {
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-/**
- * Convert HSL to RGB
- * @param {number} h - Hue (0-360)
- * @param {number} s - Saturation (0-100)
- * @param {number} l - Lightness (0-100)
- * @returns {number[]} RGB array [r, g, b]
- */
-function hslToRgb(h, s, l) {
-  s /= 100;
-  l /= 100;
-  const c = (1 - Math.abs(2 * l - 1)) * s;
-  const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
-  const m = l - c / 2;
+  const chars = "アイウエオカキクケコサシスセソタチツテト0123456789ABCDEF{}[]()<>/\\|";
+  const fontSize = 14;
+  const columns = Math.floor(canvas.width / fontSize);
+  const drops = Array(columns).fill(1);
 
-  let r, g, b;
-  if (h < 60) {
-    r = c;
-    g = x;
-    b = 0;
-  } else if (h < 120) {
-    r = x;
-    g = c;
-    b = 0;
-  } else if (h < 180) {
-    r = 0;
-    g = c;
-    b = x;
-  } else if (h < 240) {
-    r = 0;
-    g = x;
-    b = c;
-  } else if (h < 300) {
-    r = x;
-    g = 0;
-    b = c;
-  } else {
-    r = c;
-    g = 0;
-    b = x;
+  function draw() {
+    ctx.fillStyle = "rgba(10, 10, 10, 0.06)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#00ff4118";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const char = chars[Math.floor(Math.random() * chars.length)];
+      ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
   }
 
-  return [Math.round((r + m) * 255), Math.round((g + m) * 255), Math.round((b + m) * 255)];
-}
+  setInterval(draw, 50);
 
-/**
- * Generate a color palette using color theory harmonies
- * @returns {number[][]} Array of 5 RGB color arrays
- */
-function generateColorPalette() {
-  // Random base hue (0-360)
-  const baseHue = Math.floor(Math.random() * 360);
-
-  // Random saturation (40-80% for pleasing colors)
-  const baseSaturation = 40 + Math.floor(Math.random() * 40);
-
-  // Harmony types: complementary, analogous, triadic, split-complementary, tetradic
-  const harmonies = ["complementary", "analogous", "triadic", "split-complementary", "tetradic"];
-  const harmony = harmonies[Math.floor(Math.random() * harmonies.length)];
-
-  let hues = [];
-
-  switch (harmony) {
-    case "complementary":
-      // Base + opposite (180°)
-      hues = [baseHue, baseHue, (baseHue + 180) % 360, (baseHue + 180) % 360, baseHue];
-      break;
-    case "analogous":
-      // Adjacent colors (30° apart)
-      hues = [baseHue, (baseHue + 30) % 360, (baseHue + 60) % 360, (baseHue - 30 + 360) % 360, (baseHue - 60 + 360) % 360];
-      break;
-    case "triadic":
-      // Evenly spaced (120° apart)
-      hues = [baseHue, (baseHue + 120) % 360, (baseHue + 240) % 360, (baseHue + 120) % 360, baseHue];
-      break;
-    case "split-complementary":
-      // Base + two colors adjacent to complement
-      hues = [baseHue, (baseHue + 150) % 360, (baseHue + 210) % 360, (baseHue + 150) % 360, baseHue];
-      break;
-    case "tetradic":
-      // Rectangle on color wheel (60° and 180°)
-      hues = [baseHue, (baseHue + 60) % 360, (baseHue + 180) % 360, (baseHue + 240) % 360, baseHue];
-      break;
-  }
-
-  // Generate palette with varying lightness for contrast
-  // [background, accent1, shadow, top/divider, link-bg]
-  const lightnessValues = [25, 45, 35, 55, 30]; // Dark theme friendly
-
-  return hues.map((hue, index) => {
-    // Add slight saturation variation
-    const sat = baseSaturation + (Math.random() * 20 - 10);
-    return hslToRgb(hue, Math.max(20, Math.min(90, sat)), lightnessValues[index]);
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
   });
 }
 
-const exec = () => {
-  iconSync.style.animation = "spin 1s linear";
-  setTimeout(() => {
-    iconSync.style.animation = "";
-  }, 1000);
+// ===== Boot Sequence =====
+function runBootSequence(data) {
+  const el = document.getElementById("boot-sequence");
+  const lines = [
+    "[sys]  initializing terminal...",
+    `[load] profile: ${data.name}`,
+    `[load] projects: ${data.projects.length} modules found`,
+    "[net]  connecting to github.com... <span class='ok'>OK</span>",
+    "[boot] rendering portfolio...",
+    "[  <span class='ok'>OK</span>  ] ready.",
+  ];
 
-  const palette = generateColorPalette();
-  changeColors(palette);
-};
-
-function stringRgb(color) {
-  return `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
-}
-
-function changeColors(colorsArray) {
-  const accent = stringRgb(colorsArray[3]);
-  document.documentElement.style.setProperty("--accent", accent);
-
-  for (const btn of document.querySelectorAll(".btn-primary")) {
-    btn.style.backgroundColor = accent;
+  let i = 0;
+  function nextLine() {
+    if (i < lines.length) {
+      const line = document.createElement("div");
+      line.className = "boot-line";
+      line.innerHTML = lines[i];
+      line.style.animationDelay = "0s";
+      el.appendChild(line);
+      i++;
+      setTimeout(nextLine, 120 + Math.random() * 80);
+    } else {
+      setTimeout(showContent, 300);
+    }
   }
-
-  const photo = document.querySelector(".hero-photo");
-  if (photo) {
-    photo.style.borderColor = accent;
-  }
+  nextLine();
 }
 
-function changeImage() {
-  image.src = image.src.indexOf("profile") >= 0 ? "images/allan.jpg" : "images/profile.jpg";
+// ===== Render Profile =====
+function renderProfile(data) {
+  const el = document.getElementById("profile");
+
+  const linksHtml = data.social
+    .map((s) => `<a href="${s.url}" target="_blank" class="profile-link">[${s.label}]</a>`)
+    .join("");
+
+  el.innerHTML = `
+    <div class="profile-photo-wrap">
+      <img class="profile-photo" id="profile-photo" src="${data.photo}" alt="${data.name}" onclick="togglePhoto()" />
+    </div>
+    <div class="profile-info">
+      <h1 class="profile-name">${data.name}</h1>
+      <p class="profile-role">${data.role}</p>
+      <p class="profile-exp">${data.experience}</p>
+      <div class="profile-links">${linksHtml}</div>
+    </div>
+  `;
 }
+
+// ===== Render Projects =====
+function renderProjects(data) {
+  const grid = document.getElementById("projects-grid");
+
+  data.projects.forEach((proj, idx) => {
+    const row = document.createElement("div");
+    row.className = "project-row fade-in";
+    row.style.animationDelay = `${idx * 0.06}s`;
+
+    const tags = proj.tech.map((t) => `<span class="tag">${t}</span>`).join("");
+
+    const repoLink = proj.repo
+      ? `<a href="${proj.repo}" target="_blank" class="row-link" onclick="event.stopPropagation()">source</a>`
+      : "";
+    const liveLink = proj.live
+      ? `<a href="${proj.live}" target="_blank" class="row-link" onclick="event.stopPropagation()">live</a>`
+      : "";
+
+    row.innerHTML = `
+      <div class="project-index">${String(idx).padStart(2, "0")}</div>
+      <div class="project-main">
+        <div class="project-row-header">
+          <span class="project-row-title">${proj.title}</span>
+        </div>
+        <div class="project-row-desc">${proj.description}</div>
+        <div class="project-row-meta">${tags}</div>
+        <div class="project-row-links">${repoLink}${liveLink}</div>
+        <div class="project-expanded" id="preview-${idx}">
+          <img class="project-preview-img" src="${proj.preview}" alt="${proj.title} preview" loading="lazy" />
+        </div>
+      </div>
+    `;
+
+    row.addEventListener("click", () => togglePreview(idx));
+    grid.appendChild(row);
+  });
+
+  // Footer
+  const footer = document.createElement("div");
+  footer.className = "terminal-footer";
+  footer.textContent = `${data.projects.length} projects loaded // ${new Date().getFullYear()} ${data.name}`;
+  document.getElementById("content").appendChild(footer);
+}
+
+// ===== Toggle Preview =====
+function togglePreview(idx) {
+  const el = document.getElementById(`preview-${idx}`);
+  const allPreviews = document.querySelectorAll(".project-expanded");
+  allPreviews.forEach((p, i) => {
+    if (i !== idx) p.classList.remove("active");
+  });
+  el.classList.toggle("active");
+}
+
+// ===== Toggle Photo =====
+let photoState = false;
+function togglePhoto() {
+  if (!window._profileData) return;
+  const img = document.getElementById("profile-photo");
+  photoState = !photoState;
+  img.src = photoState ? window._profileData.photoAlt : window._profileData.photo;
+}
+
+// ===== Show Content =====
+function showContent() {
+  document.getElementById("boot-sequence").style.display = "none";
+  document.getElementById("content").style.display = "block";
+}
+
+// ===== Init =====
+async function init() {
+  initMatrix(document.getElementById("matrix-bg"));
+
+  const res = await fetch("data.json");
+  const data = await res.json();
+  window._profileData = data;
+
+  runBootSequence(data);
+  renderProfile(data);
+  renderProjects(data);
+}
+
+init();
