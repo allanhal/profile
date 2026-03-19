@@ -110,20 +110,16 @@ function stringRgb(color) {
 }
 
 function changeColors(colorsArray) {
-  // document.body.style.backgroundColor = stringRgb(colorsArray[0]);
-  // document.getElementsByClassName("main")[0].style.backgroundColor = stringRgb(colorsArray[0]);
+  const accent = stringRgb(colorsArray[3]);
+  document.documentElement.style.setProperty("--accent", accent);
 
-  for (const card of document.getElementsByClassName("card")) {
-    // card.style.boxShadow = `2px 1px 10px 2px ${stringRgb(colorsArray[2])}`;
+  for (const btn of document.querySelectorAll(".btn-primary")) {
+    btn.style.backgroundColor = accent;
   }
-  for (const top of document.getElementsByClassName("top")) {
-    top.style.backgroundColor = stringRgb(colorsArray[3]);
-  }
-  for (const divider of document.getElementsByClassName("divider")) {
-    divider.style.backgroundColor = stringRgb(colorsArray[3]);
-  }
-  for (const link of document.getElementsByClassName("preview-link")) {
-    link.style.backgroundColor = stringRgb(colorsArray[3]);
+
+  const photo = document.querySelector(".hero-photo");
+  if (photo) {
+    photo.style.borderColor = accent;
   }
 }
 
