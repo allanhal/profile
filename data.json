@@ -12,6 +12,15 @@
   ],
   "projects": [
     {
+      "title": "Meeting Helper",
+      "description": "Open-source Electron app for AI meeting assistance with local real-time transcription and analysis, no cloud or subscription",
+      "thumb": "images/meeting-helper-thumb.png",
+      "preview": "images/preview/meeting-helper-preview.png",
+      "tech": ["Electron", "Open Source", "Whisper", "Ollama", "Gemma", "macOS", "Windows"],
+      "repo": "https://github.com/allanhal/helper",
+      "live": "https://meetinghelper.vercel.app/"
+    },
+    {
       "title": "Estante Pinus Fortaleza",
       "description": "3D preview for wood shelf for selling",
       "thumb": "images/favico2.png",
