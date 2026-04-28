@@ -6,89 +6,145 @@
   "photo": "images/allan.jpg",
   "photoAlt": "images/profile.jpg",
   "social": [
-    { "label": "GitHub", "url": "https://github.com/allanhal", "icon": "github" },
-    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/allanaraujopinheiro/", "icon": "linkedin" },
-    { "label": "Email", "url": "mailto:allan.hal@gmail.com", "icon": "email" }
+    {
+      "label": "GitHub",
+      "url": "https://github.com/allanhal",
+      "icon": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/allanaraujopinheiro/",
+      "icon": "linkedin"
+    },
+    {
+      "label": "Email",
+      "url": "mailto:allan.hal@gmail.com",
+      "icon": "email"
+    }
   ],
   "projects": [
     {
       "title": "Meeting Helper",
       "description": "Open-source Electron app for AI meeting assistance with local real-time transcription and analysis, no cloud or subscription",
-      "thumb": "images/meeting-helper-thumb.png",
-      "preview": "images/preview/meeting-helper-preview.png",
-      "tech": ["Electron", "Open Source", "Whisper", "Ollama", "Gemma", "macOS", "Windows"],
+      "preview": "images/preview/meeting-helper-preview.jpg",
+      "tech": [
+        "Electron",
+        "Gemma",
+        "macOS",
+        "Ollama",
+        "Open Source",
+        "Whisper",
+        "Windows"
+      ],
       "repo": "https://github.com/allanhal/helper",
       "live": "https://meetinghelper.vercel.app/"
     },
     {
       "title": "Estante Pinus Fortaleza",
       "description": "3D preview for wood shelf for selling",
-      "thumb": "images/favico2.png",
-      "preview": "images/preview/estante-pinus-fortaleza.png",
-      "tech": ["Threejs", "React", "Lucide Icons"],
+      "preview": "images/preview/estante-pinus-fortaleza.jpg",
+      "tech": [
+        "Lucide Icons",
+        "React",
+        "Threejs"
+      ],
       "repo": "https://github.com/allanhal/estante-pinus",
       "live": "https://www.estantepinusfortaleza.com.br/"
     },
     {
+      "title": "Precos Imoveis Fortaleza",
+      "description": "Real estate search with neighborhood rankings and price analytics",
+      "preview": "images/preview/itbifortaleza-preview.jpg",
+      "tech": [
+        "Google Maps",
+        "Next.js",
+        "PostgreSQL",
+        "Prisma",
+        "React",
+        "Tailwind",
+        "TypeScript"
+      ],
+      "repo": null,
+      "live": "https://www.precosimoveisfortaleza.com.br/"
+    },
+    {
       "title": "HCFC",
       "description": "Fullstack project to calculate a household carbon footprint",
-      "thumb": "images/hcfc-512-512.png",
-      "preview": "images/preview/hcfc.png",
-      "tech": ["React", "Material UI", "TypeScript", "Node.js", "Express", "Prisma", "PostgreSQL", "Jest"],
+      "preview": "images/preview/hcfc.jpg",
+      "tech": [
+        "Express",
+        "Jest",
+        "Material UI",
+        "Node.js",
+        "PostgreSQL",
+        "Prisma",
+        "React",
+        "TypeScript"
+      ],
       "repo": "https://github.com/allanhal/epa-household-calculator",
       "live": "https://epa-household-calculator.vercel.app/"
     },
     {
       "title": "Termo Libras",
       "description": "Learn Brazilian sign language through the Wordle game",
-      "thumb": "images/libras.png",
-      "preview": "images/preview/termo-libras.png",
-      "tech": ["React", "Express"],
+      "preview": "images/preview/termo-libras.jpg",
+      "tech": [
+        "Express",
+        "React"
+      ],
       "repo": "https://github.com/allanhal/termooo-libras",
       "live": "https://termooo-libras.vercel.app/"
     },
     {
       "title": "Life Counter Calendar",
       "description": "Graphical representation of a life by weeks",
-      "thumb": "images/image.png",
-      "preview": "images/preview/life-calendar.png",
-      "tech": ["React", "Zustand", "Date-fns"],
+      "preview": "images/preview/life-calendar.jpg",
+      "tech": [
+        "Date-fns",
+        "React",
+        "Zustand"
+      ],
       "repo": "https://github.com/allanhal/life-counter",
       "live": "https://life-counter-calendar.vercel.app"
     },
     {
       "title": "Audio Intelligence",
       "description": "Retrieve metadata and transcription from audio files with AI",
-      "thumb": "images/audio-intelligence.png",
-      "preview": "images/preview/audio-intelligence.png",
-      "tech": ["Node.js", "Groq", "OpenAI", "Gemini", "FFmpeg"],
-      "repo": "https://github.com/allanhal/audio-transcribe",
+      "preview": "images/preview/audio-intelligence.jpg",
+      "tech": [
+        "FFmpeg",
+        "Gemini",
+        "Groq",
+        "Node.js",
+        "OpenAI"
+      ],
+      "repo": null,
       "live": "https://audio-intelligence-poc.vercel.app"
     },
     {
       "title": "Node Video Streaming",
       "description": "Fullstack video streaming app built with Node.js",
-      "thumb": "images/node-video-streaming.png",
-      "preview": "images/preview/node-video-streaming-preview.png",
-      "tech": ["Node.js", "JavaScript", "HTML"],
+      "preview": "images/preview/node-video-streaming-preview.jpg",
+      "tech": [
+        "HTML",
+        "JavaScript",
+        "Node.js"
+      ],
       "repo": "https://github.com/allanhal/node-video-streaming",
       "live": "https://node-video-streaming.onrender.com"
     },
     {
-      "title": "Precos Imoveis Fortaleza",
-      "description": "Real estate search with neighborhood rankings and price analytics",
-      "thumb": "images/itbifortaleza-thumb-v2.png",
-      "preview": "images/preview/itbifortaleza-preview-v2.png",
-      "tech": ["Next.js", "React", "TypeScript", "Tailwind", "Prisma", "PostgreSQL", "Google Maps"],
-      "repo": null,
-      "live": "https://www.precosimoveisfortaleza.com.br/"
-    },
-    {
       "title": "OSINT BR",
       "description": "Map-based location intelligence tool using multiple data sources",
-      "thumb": "images/osint_thumb.png",
-      "preview": "images/preview/osint-preview.png",
-      "tech": ["Next.js", "React", "TypeScript", "Leaflet", "PostgreSQL", "Prisma"],
+      "preview": "images/preview/osint-preview.jpg",
+      "tech": [
+        "Leaflet",
+        "Next.js",
+        "PostgreSQL",
+        "Prisma",
+        "React",
+        "TypeScript"
+      ],
       "repo": null,
       "live": "https://osint-br.vercel.app/"
     }
