@@ -24,6 +24,21 @@
   ],
   "projects": [
     {
+      "title": "LinkedIn Analyser",
+      "description": "Scores a LinkedIn profile and ranks concrete fixes, with a small AI model running entirely in the browser",
+      "preview": "images/preview/linkedin-analyser-preview.jpg",
+      "tech": [
+        "llama.cpp",
+        "Node.js",
+        "Open Source",
+        "pdf.js",
+        "WebAssembly",
+        "WebGPU"
+      ],
+      "repo": "https://github.com/allanhal/linkedin",
+      "live": "https://linkedin-analysis.allanpinheiro.com/"
+    },
+    {
       "title": "Meeting Helper",
       "description": "Open-source Electron app for AI meeting assistance with local real-time transcription and analysis, no cloud or subscription",
       "preview": "images/preview/meeting-helper-preview.jpg",
