@@ -39,6 +39,20 @@
       "live": "https://linkedin-analysis.allanpinheiro.com/"
     },
     {
+      "title": "Plataforma de Ranking",
+      "description": "White-label ranking platform where a group votes on its members by category and attribute, like the Mix dos Campeões CS2 crew",
+      "preview": "images/preview/rank-mix-dos-campeoes-preview.jpg",
+      "tech": [
+        "Clerk",
+        "Neon Postgres",
+        "Next.js",
+        "React",
+        "Tailwind",
+        "TypeScript"
+      ],
+      "live": "https://rank.allanpinheiro.com/mix-dos-campeoes"
+    },
+    {
       "title": "Meeting Helper",
       "description": "Open-source Electron app for AI meeting assistance with local real-time transcription and analysis, no cloud or subscription",
       "preview": "images/preview/meeting-helper-preview.jpg",
