@@ -18,6 +18,9 @@ yarn-error.log*
 
 # OS metadata
 .DS_Store
+
+# Local operational documentation
+/docs/
 Thumbs.db
 desktop.ini
 

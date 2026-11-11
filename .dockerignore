@@ -1,0 +1,10 @@
+*
+!index.html
+!index.css
+!index.js
+!data.json
+!images/
+!images/**
+!nginx.conf
+images/**/.DS_Store
+images/**/._*
