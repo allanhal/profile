@@ -7,6 +7,8 @@ services:
       args:
         GIT_COMMIT: ${GIT_COMMIT:-unknown}
     restart: unless-stopped
+    depends_on:
+      - checker
     ports:
       - "${PORT:-3082}:8080"
     healthcheck:
@@ -14,6 +16,20 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
+
+  checker:
+    image: node:24-alpine
+    user: node
+    restart: unless-stopped
+    working_dir: /app
+    command: node checker.mjs
+    volumes:
+      - ./checker.mjs:/app/checker.mjs:ro
+      - ./data.json:/app/data.json:ro
+    read_only: true
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
 
   tunnel:
     image: cloudflare/cloudflared:latest

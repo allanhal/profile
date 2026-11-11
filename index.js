@@ -98,7 +98,7 @@ function renderProjects(data) {
       ? `<a href="${proj.repo}" target="_blank" class="row-link" onclick="event.stopPropagation()">source</a>`
       : "";
     const liveLink = proj.live
-      ? `<a href="${proj.live}" target="_blank" class="row-link" onclick="event.stopPropagation()">live</a>`
+      ? `<a data-live-url="${proj.live}" target="_blank" rel="noopener noreferrer" class="row-link" aria-disabled="true" tabindex="-1" title="Checking live site" onclick="event.stopPropagation()">live [checking]</a>`
       : "";
 
     row.innerHTML = `
@@ -125,6 +125,37 @@ function renderProjects(data) {
   footer.className = "terminal-footer";
   footer.textContent = `${data.projects.length} projects loaded // ${new Date().getFullYear()} ${data.name}`;
   document.getElementById("content").appendChild(footer);
+}
+
+async function updateLiveLinks() {
+  let results = new Map();
+  try {
+    const response = await fetch("/api/live-status", {
+      cache: "no-store",
+      signal: AbortSignal.timeout(45000),
+    });
+    if (!response.ok) throw new Error("Link checks unavailable");
+    const data = await response.json();
+    results = new Map(data.links.map((link) => [link.url, link.status]));
+  } catch {
+    // A failed check must not leave an unverified link enabled.
+  }
+
+  document.querySelectorAll("[data-live-url]").forEach((link) => {
+    const url = link.dataset.liveUrl;
+    const status = results.get(url);
+    const available = status === 200;
+    link.textContent = `live [${status ?? "unavailable"}]`;
+    link.title = status ? `HTTP ${status}` : "Could not reach live site";
+    link.setAttribute("aria-disabled", String(!available));
+    if (available) {
+      link.href = url;
+      link.removeAttribute("tabindex");
+    } else {
+      link.removeAttribute("href");
+      link.setAttribute("tabindex", "-1");
+    }
+  });
 }
 
 // ===== Toggle Preview =====
@@ -163,6 +194,8 @@ async function init() {
   runBootSequence(data);
   renderProfile(data);
   renderProjects(data);
+  updateLiveLinks();
+  setInterval(updateLiveLinks, 60000);
 }
 
 init();

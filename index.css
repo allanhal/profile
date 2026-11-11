@@ -371,6 +371,13 @@ a {
   content: "→ ";
 }
 
+.row-link[aria-disabled="true"] {
+  color: var(--text-dim);
+  border-color: transparent;
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
 /* ===== Expanded Project (preview) ===== */
 .project-expanded {
   display: none;
