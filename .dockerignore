@@ -6,5 +6,6 @@
 !images/
 !images/**
 !nginx.conf
+!build.mjs
 images/**/.DS_Store
 images/**/._*
